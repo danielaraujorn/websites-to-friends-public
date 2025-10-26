@@ -1,0 +1,65 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "id": "homePage"
+      },
+      "fields": [
+        {
+          "id": "instagramLink",
+          "defaultValue": {
+            "pt-BR": "https://www.instagram.com/dielzin.araujo",
+            "en-US": "https://www.instagram.com/dielzin.araujo"
+          }
+        },
+        {
+          "id": "footerTitle",
+          "defaultValue": {
+            "pt-BR": "Daniel Araújo | Desenvolvedor",
+            "en-US": "Daniel Araújo | Developer"
+          }
+        },
+        {
+          "id": "copyright",
+          "defaultValue": {
+            "pt-BR": "© 2025 Daniel Araújo. Todos os direitos reservados.",
+            "en-US": "© 2025 Daniel Araújo. All rights reserved."
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "aboutCard"
+      },
+      "fields": [
+        {
+          "id": "cta",
+          "defaultValue": {
+            "pt-BR": "Quero saber mais",
+            "en-US": "I want to know more"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "blogPost"
+      },
+      "fields": [
+        {
+          "id": "relatedPostsTitle",
+          "defaultValue": {
+            "pt-BR": "Conteúdos semelhantes",
+            "en-US": "Similar contents"
+          }
+        }
+      ]
+    }
+  ],
+  "webhooks": [
+    {
+      "url": "https://daniel-araujo.vercel.app/api/revalidate"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.button {
+  --content-color: var(--color-text-white);
+  color: var(--content-color);
+  border: none;
+  font-weight: 600;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--button-shadow);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out 0.4s forwards;
+  width: auto;
+  --border: 0rem;
+  border: var(--border) solid;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.small {
+  padding: calc(0.6rem - var(--border)) calc(1rem - var(--border));
+  font-size: var(--font-sm);
+}
+
+.medium {
+  padding: calc(0.8rem - var(--border)) calc(1.5rem - var(--border));
+  font-size: var(--font-base);
+}
+
+.large {
+  padding: calc(1rem - var(--border)) calc(2rem - var(--border));
+  font-size: var(--font-lg);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--content-color);
+  transition: 0.3s ease;
+}
+
+
+.fullWidth {
+  width: 100%;
+}
+
+.contained {
+  --content-color: var(--color-text-white);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--button-sheen);
+    transition: left 0.5s;
+  }
+
+  &.primary {
+    background: var(--button-contained-primary-bg);
+    --content-color: var(--button-contained-primary-text);
+  }
+
+  &.secondary {
+    background: var(--button-contained-secondary-bg);
+    --content-color: var(--button-contained-secondary-text);
+  }
+
+  &.white {
+    background: var(--button-contained-white-bg);
+    --content-color: var(--button-contained-white-text);
+  }
+
+  &:hover {
+    --content-color: var(--color-text-white);
+    background: var(--button-hover-bg);
+    box-shadow: var(--button-shadow-hover);
+
+    &::before {
+      left: 60%;
+    }
+  }
+}
+
+.outlined {
+  background: var(--color-bg-transparent);
+  --content-color: var(--color-primary);
+  --border: 0.125rem;
+
+  &.primary {
+    border-color: var(--button-outlined-primary-border);
+    --content-color: var(--button-outlined-primary-text);
+  }
+
+  &.secondary {
+    border-color: var(--button-outlined-secondary-border);
+    --content-color: var(--button-outlined-secondary-text);
+  }
+
+  &.white {
+    border-color: var(--button-outlined-white-border);
+    --content-color: var(--button-outlined-white-text);
+  }
+
+  &.primary:hover {
+    background: var(--button-outlined-primary-border);
+    --content-color: var(--color-text-white);
+    border-color: var(--button-outlined-primary-border);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--button-shadow-hover);
+  }
+
+  &.secondary:hover {
+    background: var(--button-outlined-secondary-border);
+    --content-color: var(--color-text-white);
+    border-color: var(--button-outlined-secondary-border);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--button-shadow-hover);
+  }
+
+  &.white:hover {
+    background: var(--button-outlined-white-border);
+    --content-color: var(--color-text-primary);
+    border-color: var(--button-outlined-white-border);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--button-shadow-hover);
+  }
+}
+
+@include aboveTablet {
+  .small {
+    padding: calc(0.8rem - var(--border)) calc(1.5rem - var(--border));
+  }
+
+  .medium {
+    padding: calc(1rem - var(--border)) calc(2rem - var(--border));
+  }
+
+  .large {
+    padding: calc(1.2rem - var(--border)) calc(2.5rem - var(--border));
+  }
+}
+
+@include aboveDesktop {
+  .small {
+    padding: calc(1rem - var(--border)) calc(2rem - var(--border));
+  }
+
+  .medium {
+    padding: calc(1.2rem - var(--border)) calc(2.5rem - var(--border));
+  }
+
+  .large {
+    padding: calc(1.4rem - var(--border)) calc(3rem - var(--border));
+  }
+}

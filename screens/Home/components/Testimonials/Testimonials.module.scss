@@ -1,0 +1,251 @@
+.testimonials {
+  padding: 6rem 0;
+  background: var(--testimonials-bg);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.screenshot {
+  width: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-size: var(--font-section-title);
+  font-weight: 700;
+  color: var(--testimonials-title-text);
+  margin-bottom: 1rem;
+  position: relative;
+  background: var(--testimonials-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--testimonials-title-underline);
+    border-radius: 2px;
+  }
+}
+
+.subtitle {
+  max-width: 500px;
+  font-size: var(--font-base);
+  color: var(--testimonials-subtitle-text);
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  flex: 1;
+  flex-basis: 15rem;
+  max-width: 20rem;
+  background: var(--testimonials-card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  background: var(--testimonials-avatar-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  box-shadow: var(--shadow-hover);
+  color: var(--testimonials-avatar-text);
+}
+
+.avatarIcon {
+  font-size: var(--font-lg);
+  filter: grayscale(0);
+}
+
+.clientInfo {
+  flex: 1;
+}
+
+.clientName {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--testimonials-client-name-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.clientRole {
+  font-size: var(--font-sm);
+  color: var(--testimonials-client-role-text);
+  margin: 0;
+}
+
+.star {
+  color: var(--testimonials-star-filled);
+  font-size: var(--font-lg);
+}
+
+.starEmpty {
+  color: var(--testimonials-star-empty);
+  font-size: var(--font-lg);
+}
+
+.quote {
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--testimonials-quote-text);
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--color-bg-primary);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+.statNumber {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--testimonials-stat-text);
+  margin-bottom: 0.5rem;
+  background: var(--testimonials-stat-number-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  font-size: var(--font-base);
+  color: var(--testimonials-stat-label-text);
+  font-weight: 500;
+}
+
+/* Tablet */
+@include aboveTablet {
+  .testimonials {
+    padding: 5rem 0;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .grid {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 0.75rem;
+  }
+
+  .avatar {
+    width: 4rem;
+    height: 4rem;
+    margin-right: 0.75rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .stat {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Desktop */
+@include aboveDesktop {
+  .testimonials {
+    padding: 8rem 0;
+  }
+
+  .header {
+    margin-bottom: 4rem;
+  }
+
+  .grid {
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .cardHeader {
+    margin-bottom: 1rem;
+  }
+
+  .avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 1rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  .stat {
+    padding: 2rem 1.25rem;
+  }
+}

@@ -1,0 +1,154 @@
+.blog {
+  padding-top: 5.5rem;
+  min-height: 100vh;
+  background: var(--blog-bg-bright);
+}
+
+.container {
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.content {
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-text-primary);
+    font-weight: 700;
+    margin-block: 0;
+    line-height: var(--line-height-tight);
+  }
+
+  h2 {
+    font-size: var(--font-lg);
+  }
+
+  h3 {
+    font-size: var(--font-base);
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    margin-block: 0;
+    font-size: var(--font-base);
+  }
+
+  ul,
+  ol {
+    margin-block: 0;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-block: 0;
+    list-style: disc;
+    color: var(--color-text-secondary);
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1.5rem;
+    margin-block: 0;
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 25rem;
+    object-fit: contain;
+    background: var(--opacity-black-10);
+    border-radius: 10px;
+    margin-block: 0;
+  }
+
+  code {
+    background: var(--opacity-primary-10);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--color-primary);
+  }
+
+  pre {
+    background: var(--opacity-primary-10);
+    padding: 1.5rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-block: 0;
+
+    code {
+      background: transparent;
+      padding: 0;
+    }
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--opacity-primary-10);
+    margin-block: 0;
+  }
+
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@include aboveTablet {
+
+  .blog {
+    background: var(--blog-bg);
+  }
+
+  .content {
+    background: var(--blog-content-bg);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 3rem 2.5rem;
+  }
+
+  .shareSection {
+    padding: 2.5rem;
+  }
+}
+
+/* Desktop */
+@include aboveDesktop {
+  .blog {
+    padding-top: 7rem;
+  }
+
+  .content {
+    padding: 4rem 3rem;
+  }
+}

@@ -1,0 +1,61 @@
+:root {
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #4a4a4a;
+  --color-gray-light: #e0e0e0;
+  --color-star: #ffc107;
+
+  /* Brand tokens come from site: --brand-*-color & --brand-*-color-rgb */
+
+  /* Semantic mapping */
+  --color-primary: var(--brand-primary-color);
+  --color-secondary: var(--brand-secondary-color);
+  --color-accent: var(--brand-accent-color);
+  --color-highlight: var(--brand-highlight-color);
+
+  /* Computed tints/shades with optional per-site overrides */
+  --color-primary-light: white;
+  --color-primary-dark:  black;
+
+  /* Opacity helpers using brand RGB (resolved at use time) */
+  --opacity-bg-90: rgba(var(--brand-bg-light-rgb), 0.9);
+  --opacity-bg-50: rgba(var(--brand-bg-light-rgb), 0.5);
+  --opacity-bg-10: rgba(var(--brand-bg-light-rgb), 0.1);
+
+  --opacity-primary-50: rgba(var(--brand-primary-color-rgb), 0.5);
+  --opacity-primary-10: rgba(var(--brand-primary-color-rgb), 0.1);
+  --opacity-primary-08: rgba(var(--brand-primary-color-rgb), 0.08);
+  --opacity-primary-05: rgba(var(--brand-primary-color-rgb), 0.05);
+
+  --opacity-secondary-50: rgba(var(--brand-secondary-color-rgb), 0.5);
+  --opacity-secondary-10: rgba(var(--brand-secondary-color-rgb), 0.1);
+
+  --opacity-accent-50: rgba(var(--brand-accent-color-rgb), 0.5);
+  --opacity-accent-10: rgba(var(--brand-accent-color-rgb), 0.1);
+  --opacity-accent-05: rgba(var(--brand-accent-color-rgb), 0.05);
+
+  --opacity-white-20: rgba(255, 255, 255, 0.2);
+  --opacity-white-10: rgba(255, 255, 255, 0.1);
+  --opacity-black-30: rgba(0, 0, 0, 0.3);
+  --opacity-black-10: rgba(0, 0, 0, 0.1);
+
+  /* Backgrounds & text */
+  --color-bg-primary: var(--brand-bg-light);
+  --color-bg-secondary: var(--color-white);
+  --color-bg-transparent: transparent;
+
+  --color-text-primary: var(--brand-dark-color);
+  --color-text-secondary: var(--color-gray);
+  --color-text-white: var(--color-white);
+  --color-text-accent: var(--color-primary);
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary-color) 0%, var(--brand-highlight-color) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--brand-secondary-color) 0%, var(--brand-accent-color) 100%);
+  --gradient-hover: linear-gradient(135deg, var(--brand-dark-color), var(--brand-accent-color));
+  --gradient-light: linear-gradient(135deg, var(--brand-bg-light) 0%, var(--color-white) 100%);
+  --button-sheen: linear-gradient(90deg, transparent, var(--opacity-white-20), transparent);
+}
+
+

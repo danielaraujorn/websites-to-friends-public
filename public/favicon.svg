@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><style>
+    #light-icon {
+      display: inline;
+    }
+    #dark-icon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #light-icon {
+        display: none;
+      }
+      #dark-icon {
+        display: inline;
+      }
+    }
+  </style><g id="light-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(1,0,0,1,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M628.4,983.36c-40.97,10.85-84.01,16.64-128.4,16.64H0V0l124.79,101.95c271.05,221.45,450.48,535.46,503.61,881.41Z" style="fill:#d49e5e;"></path><path d="M1000,500c0,138.07-55.96,263.07-146.45,353.55C748.09,499.76,491.07,211.03,151.89,65.27L0,0h500c276.14,0,500,223.86,500,500Z" style="fill:#034d66;"></path><path d="M853.55,853.55c-61.39,61.4-138.68,106.9-225.15,129.81-53.14-345.95-232.56-659.96-503.61-881.41L0,0l151.89,65.27c339.19,145.75,596.2,434.49,701.66,788.27Z" style="fill:#a78351;"></path></svg></svg></g></g></svg></g><g id="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><g><g transform="matrix(1,0,0,1,0,0)"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000"><svg id="Camada_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 1000">
+  <!-- Generator: Adobe Illustrator 29.8.2, SVG Export Plug-In . SVG Version: 2.1.1 Build 3)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M628.4,983.4c-41,10.8-84,16.6-128.4,16.6H0V0l124.8,101.9c271,221.4,450.5,535.5,503.6,881.4h0Z"></path>
+  <path class="st0" d="M1000,500c0,138.1-56,263.1-146.5,353.5C748.1,499.8,491.1,211,151.9,65.3L0,0h500c276.1,0,500,223.9,500,500Z"></path>
+</svg></svg></g></g></svg></g></svg>

@@ -1,0 +1,225 @@
+.hero {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  background: var(--hero-bg);
+  color: var(--hero-text-primary);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding: 0 2.5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.content {
+  width: 100%;
+  animation: fadeInUp 1s ease-out;
+}
+
+.title {
+  font-size: var(--font-hero-title);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+  margin-bottom: 1rem;
+  background: var(--hero-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.subtitle p {
+  font-size: var(--font-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--hero-text-secondary);
+  font-weight: 400;
+  animation: fadeInUp 1s ease-out 0.2s both;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 35rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.imageContainer {
+  width: 100%;
+  max-width: 23rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInRight 1s ease-out 0.3s both;
+  order: -1;
+  aspect-ratio: 4/5;
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: var(--hero-image-shadow);
+  animation: imageFloat 4s ease-in-out infinite;
+  margin-top: 1rem;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes titleGlow {
+  from {
+    filter: brightness(1);
+  }
+
+  to {
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes imageFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@include aboveTablet {
+  .hero {
+    padding: 4rem 0;
+    padding-top: 7rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+    flex-direction: row;
+  }
+
+  .content {
+    width: 50%;
+  }
+
+  .title {
+    max-width: initial;
+  }
+
+  .subtitle p {
+    max-width: initial;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .ctaContainer {
+    margin-top: 2.5rem;
+  }
+
+  .imageContainer {
+    width: 50%;
+    justify-content: flex-end;
+    order: 1;
+    max-width: 25rem;
+  }
+
+  .ctaContainer {
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .heroImage {
+    margin-top: 0;
+  }
+}
+
+@include aboveDesktop {
+  .hero {
+    padding: 8rem 0;
+    padding-top: 10rem;
+  }
+
+  .container {
+    gap: 4rem;
+  }
+
+  .content {
+    width: 60%;
+  }
+
+  .imageContainer {
+    width: 40%;
+    max-width: 450px;
+  }
+
+  .ctaContainer {
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,145 @@
+/* ============================================================================
+   IMPORT COLORS
+   All color configuration is in colors.css
+   🎨 To rebrand: Edit app/colors.css (not this file!)
+   ============================================================================ */
+@import './color-foundations.css';
+@import './colors.css';
+
+:root {
+  
+  /* Border Radius */
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  
+  /* Shadows */
+  --shadow: 0 10px 30px rgba(43, 90, 76, 0.1);
+  --shadow-hover: 0 20px 40px rgba(43, 90, 76, 0.2);
+  
+  /* Breakpoints */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1400px;
+  
+  /* Container Max Width */
+  --container-max-width: 1200px;
+  
+  /* Font Sizes - Mobile First */
+  --font-xs: 0.75rem;    /* 12px */
+  --font-sm: 0.875rem;   /* 14px */
+  --font-base: 1rem;     /* 16px */
+  --font-lg: 1.25rem;    /* 20px */
+  --font-xl: 1.5rem;     /* 24px */
+  --font-section-title: 2rem; /* 32px */
+  --font-hero-title: 2.3rem; /* 40px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.2;
+  --line-height-relaxed: 1.6;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
+  margin-left: 0.5rem;
+
+  li {
+    padding: 0.2rem 0;
+    color: var(--color-text-secondary);
+    font-size: var(--font-base);
+    position: relative;
+    text-align: left;
+  
+    &::marker {
+      color: var(--color-primary);
+    }
+  }
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (min-width: 769px) {
+  :root {
+    --font-xs: 0.8rem;     /* 12.8px */
+    --font-sm: 1rem;     /* 14.4px */
+    --font-base: 1.1rem;   /* 17.6px */
+    --font-lg: 1.4rem;     /* 22.4px */
+    --font-xl: 1.7rem;     /* 27.2px */
+    --font-section-title: 2.5rem; /* 40px */
+    --font-hero-title: 2.8rem; /* 48px */
+  }
+}
+
+@media (min-width: 1601px) {
+  :root {
+    --font-xs: 0.875rem;   /* 14px */
+    --font-sm: 1.1rem;       /* 16px */
+    --font-base: 1.2rem; /* 18px */
+    --font-lg: 1.25rem;     /* 24px */
+    --font-xl: 1.5rem;   /* 30px */
+    --font-section-title: 3rem; /* 48px */
+    --font-hero-title: 3.1rem; /* 56px */
+  }
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    max-width: 100%;
+  }
+}

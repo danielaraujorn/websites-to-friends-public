@@ -1,0 +1,135 @@
+.about {
+  padding: 3rem 0;
+  background: var(--about-bg);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  text-align: center;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  aspect-ratio: 4/5;
+  max-width: 22rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.profileImage {
+  aspect-ratio: 4/5;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--about-image-shadow);
+  position: relative;
+  margin: 0 auto;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.content {
+  padding: 0.5rem 0;
+}
+
+.title {
+  font-size: var(--font-section-title);
+  font-weight: 700;
+  color: var(--about-title-text);
+  margin-bottom: 0.5rem;
+  position: relative;
+  background: var(--about-title-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description p {
+  max-width: 30rem;
+  margin-inline: auto;
+  font-size: var(--font-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--about-description-text);
+  text-align: center;
+}
+
+.card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: var(--about-card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.cardTitle {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--about-card-title-text);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cardDescription {
+  color: var(--about-card-description-text);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 1rem;
+  font-size: var(--font-base);
+  text-align: start;
+
+  &>*:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Tablet */
+@include aboveTablet {
+  .about {
+    padding: 5rem 0;
+  }
+
+  .card {
+    padding: 1.5rem 2rem;
+  }
+
+  .profileImage {
+    max-width: initial;
+  }
+
+  .container {
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    text-align: left;
+  }
+
+  .description p {
+    max-width: initial;
+    text-align: left;
+    margin-inline: initial;
+  }
+}
+
+@include aboveDesktop {
+  .about {
+    padding: 8rem 0;
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .container {
+    gap: 4rem;
+  }
+}

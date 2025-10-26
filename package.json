@@ -1,0 +1,56 @@
+{
+  "name": "website-to-friends-public",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "select-site": "ts-node -r tsconfig-paths/register --project tsconfig.scripts.json scripts/select-site.ts",
+    "watch-site": "chokidar 'site-config/**/*' -c 'npm run select-site'",
+    "prebuild": "BUILD_PROXY=true npm run select-site",
+    "predev": "npm run select-site",
+    "dev:next": "next dev",
+    "dev": "run-p 'watch-site' 'dev:next'",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "postbuild": "next-sitemap",
+    "generate-schema": "ts-node -r tsconfig-paths/register --project tsconfig.scripts.json scripts/generate-schema.ts",
+    "import-schema": "ts-node -r tsconfig-paths/register --project tsconfig.scripts.json scripts/import-schema.ts"
+  },
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^17.1.5",
+    "@formatjs/intl-localematcher": "^0.6.2",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/functions": "^3.1.4",
+    "contentful": "^11.8.7",
+    "negotiator": "^1.0.0",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-horizontal-scrolling-menu": "^8.2.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
+    "sass": "^1.93.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/negotiator": "^0.6.4",
+    "@types/node": "^20",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "chokidar-cli": "^3.0.0",
+    "contentful-export": "^7.21.92",
+    "contentful-import": "^9.4.122",
+    "dotenv": "^17.2.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0",
+    "next-sitemap": "^4.2.3",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2"
+  }
+}

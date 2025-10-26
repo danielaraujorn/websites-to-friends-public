@@ -1,0 +1,185 @@
+/* ============================================================================
+   COLORS.CSS - All Color Configuration
+   
+   🎨 TO REBRAND: Only edit this file!
+   
+   Quick Steps:
+   1. Change 6 brand colors below (lines 16-21)
+   2. Update RGB values in opacity variations (lines 50-75)
+   3. Done! Entire site updates automatically
+   
+   For 3-color schemes: Use same color multiple times (it's OK!)
+   Example: --brand-secondary-color: #e5c283;
+            --brand-primary-color: #e5c283;  (same as above - totally fine!)
+   ============================================================================ */
+
+   :root {
+      /* ============================================
+         1. BRAND COLORS (per site)
+         ============================================ */
+      --brand-bg-light-rgb: 246, 246, 246;       /* #f6f6f6 */
+      --brand-bg-light: rgb(var(--brand-bg-light-rgb));
+      --brand-secondary-color-rgb: 167, 131, 81;     /* #a78351 */
+      --brand-secondary-color: rgb(var(--brand-secondary-color-rgb));
+      --brand-primary-color-rgb: 212, 158, 94;       /* #d49e5e */
+      --brand-primary-color: rgb(var(--brand-primary-color-rgb));
+      --brand-dark-color-rgb: 3, 77, 102;          /* #034d66 */
+      --brand-dark-color: rgb(var(--brand-dark-color-rgb));
+      --brand-accent-color-rgb: 212, 158, 94;        /* #d49e5e */
+      --brand-accent-color: rgb(var(--brand-accent-color-rgb));
+      --brand-highlight-color-rgb: 212, 158, 94;     /* #d49e5e */
+      --brand-highlight-color: rgb(var(--brand-highlight-color-rgb));
+ 
+      /* Specific helper used by this site */
+      --opacity-dark-color-70: rgba(3, 77, 102, 0.7);
+      
+     /* ============================================
+        7. SECTION: BUTTONS
+        ============================================ */
+      --button-contained-primary-bg: var(--gradient-primary);
+      --button-contained-primary-text: var(--color-text-white);
+      --button-contained-secondary-bg: var(--gradient-secondary);
+      --button-contained-secondary-text: var(--color-text-white);
+      --button-contained-white-bg: var(--color-white);
+      --button-contained-white-text: var(--color-text-primary);
+
+      --button-outlined-primary-border: var(--color-primary);
+      --button-outlined-primary-text: var(--color-primary);
+      --button-outlined-secondary-border: var(--color-secondary);
+      --button-outlined-secondary-text: var(--color-text-white);
+      --button-outlined-white-border: var(--color-text-white);
+      --button-outlined-white-text: var(--color-text-white);
+
+      --button-hover-bg: var(--gradient-hover);
+      --button-shadow: var(--shadow);
+      --button-shadow-hover: var(--shadow-hover);
+
+     /* ============================================
+        8. SECTION: HEADER
+        ============================================ */
+      --header-bg: var(--brand-dark-color);
+      --header-bg-scrolled: var(--opacity-dark-color-70);
+      --header-link-color: var(--color-text-white);
+      --header-link-bg-hover: var(--opacity-primary-10);
+      --header-link-text: var(--color-text-white);
+     
+     /* ============================================
+        9. SECTION: HERO
+        ============================================ */
+      --hero-bg: linear-gradient(135deg, var(--brand-dark-color) 0%, var(--opacity-dark-color-70) 100%);
+      --hero-image-shadow: 0 25px 50px rgba(36, 10, 10, 0.3);
+      --hero-text-primary: var(--color-text-primary);
+      --hero-text-secondary: var(--color-text-white);
+      --hero-title-gradient: var(--gradient-primary);
+     
+     /* ============================================
+        10. SECTION: ABOUT
+        ============================================ */
+     --about-bg: linear-gradient(135deg, rgba(var(--brand-dark-color-rgb), 0.8) -50%, rgba(var(--brand-dark-color-rgb), 0.1) 50%);
+     --about-image-shadow: 0 15px 35px var(--opacity-black-10);
+     --about-card-bg: var(--gradient-light);
+     --about-title-text: var(--color-text-white);
+     --about-title-gradient: var(--brand-dark-color);
+     --about-description-text: var(--color-text-primary);
+     --about-card-title-text: var(--color-text-primary);
+     --about-card-description-text: var(--color-text-secondary);
+     
+     /* ============================================
+        11. SECTION: SERVICES
+        ============================================ */
+     --services-bg: linear-gradient(135deg, var(--opacity-accent-05) 0%, var(--brand-bg-light) 50%, var(--opacity-primary-05) 100%);
+     --services-overlay: radial-gradient(circle at 20% 80%, var(--opacity-primary-08) 0%, transparent 50%);
+     --services-title-gradient: var(--brand-dark-color);
+     --services-title-underline: var(--color-primary);
+     --services-card-bg: var(--color-bg-secondary);
+     --services-card-border-hover: var(--color-secondary);
+     --services-icon-bg: var(--gradient-primary);
+     --services-icon-shadow: drop-shadow(0 0 10px var(--opacity-black-30));
+     --services-cta-bg: var(--gradient-primary);
+     --services-cta-overlay: radial-gradient(circle, var(--opacity-white-10) 0%, transparent 70%);
+     --services-subtitle-text: var(--color-text-secondary);
+     --services-card-title-text: var(--color-text-primary);
+     --services-card-description-text: var(--color-text-secondary);
+     --services-feature-text: var(--color-text-secondary);
+     --services-feature-marker: var(--color-primary);
+     --services-icon-text: var(--color-text-white);
+     --services-cta-title-text: var(--color-text-white);
+     --services-cta-description-text: var(--color-text-white);
+     
+     /* ============================================
+        12. SECTION: TESTIMONIALS
+        ============================================ */
+     --testimonials-bg: linear-gradient(135deg, var(--brand-dark-color) 0%, var(--brand-secondary-color) 100%);
+     --testimonials-title-gradient: var(--gradient-light);
+     --testimonials-title-underline: var(--brand-secondary-color);
+     --testimonials-card-bg: var(--color-bg-primary);
+     --testimonials-avatar-bg: var(--gradient-primary);
+     --testimonials-stat-text: var(--color-primary);
+     --testimonials-stat-number-gradient: var(--gradient-primary);
+     --testimonials-title-text: var(--color-text-white);
+     --testimonials-subtitle-text: var(--color-text-white);
+     --testimonials-avatar-text: var(--color-text-white);
+     --testimonials-client-name-text: var(--color-text-primary);
+     --testimonials-client-role-text: var(--color-text-secondary);
+     --testimonials-quote-text: var(--color-text-secondary);
+     --testimonials-star-filled: var(--color-star);
+     --testimonials-star-empty: var(--color-gray-light);
+     --testimonials-stat-label-text: var(--color-text-secondary);
+     
+     /* ============================================
+        13. SECTION: CONTACT
+        ============================================ */
+     --contact-bg: linear-gradient(135deg, var(--brand-bg-light) 0%, var(--opacity-accent-10) 100%);
+     --contact-overlay: radial-gradient(circle at 80% 20%, var(--opacity-primary-08) 0%, transparent 50%);
+     --contact-title-gradient: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+     --contact-label-color: var(--color-primary);
+     --contact-input-bg: var(--color-bg-primary);
+     --contact-input-focus-border: var(--color-secondary);
+     --contact-input-focus-shadow: 0 0 0 3px var(--opacity-secondary-10);
+     --contact-button-shadow-hover: 0 8px 25px var(--opacity-secondary-50);
+     --contact-subtitle-text: var(--color-text-secondary);
+     --contact-input-text: var(--color-text-primary);
+     --contact-input-placeholder: var(--color-text-secondary);
+     --contact-button-text: var(--color-text-white);
+     --contact-info-title-text: var(--color-primary);
+     --contact-info-heading-text: var(--color-primary);
+     --contact-info-text: var(--color-text-secondary);
+     --contact-icon-text: var(--color-text-white);
+     --contact-social-link-text: var(--color-primary);
+     --contact-social-link-hover-text: var(--color-text-white);
+     
+     /* ============================================
+        14. SECTION: FOOTER
+        ============================================ */
+     --footer-bg: linear-gradient(135deg, var(--opacity-primary-05) 0%, var(--brand-bg-light) 100%);
+     --footer-brand-text: var(--brand-bg-light);
+     --footer-brand-name-gradient: var(--gradient-primary);
+     --footer-social-bg: var(--opacity-white-20);
+     --footer-social-shadow: 0 8px 20px var(--opacity-accent-50);
+     --footer-icon-shadow: drop-shadow(0 0 10px var(--opacity-black-30));
+     --footer-border: 1px solid var(--opacity-white-10);
+     --footer-brand-description-text: var(--color-primary);
+     --footer-copyright-text: var(--color-primary);
+     
+     /* ============================================
+        15. SECTION: BLOG POST
+        ============================================ */
+     --blog-bg-bright: var(--brand-bg-light);
+     --blog-bg: var(--brand-bg-light);
+     --blog-content-bg: var(--color-bg-secondary);
+     --blog-title-gradient: var(--gradient-primary);
+     --blog-metadata-text: var(--color-text-secondary);
+     --blog-tag-bg: var(--opacity-primary-10);
+     --blog-tag-text: var(--color-primary);
+     --blog-share-bg: var(--gradient-primary);
+     --blog-image-shadow: 0 15px 35px var(--opacity-black-10);
+    }
+    
+    /* ============================================================================
+       END OF COLOR CONFIGURATION
+       
+       🎨 That's it! All color decisions are above.
+       Component files never need to know about actual colors.
+       ============================================================================ */
+    
+    

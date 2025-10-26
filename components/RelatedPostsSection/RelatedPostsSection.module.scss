@@ -1,0 +1,141 @@
+.blog {
+  padding-block: 3rem 2rem;
+  background: var(--blog-bg);
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  padding-inline: 2rem;
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel {
+  --carousel-gap: 1rem;
+  filter: drop-shadow(var(--shadow));
+
+  :global(.react-horizontal-scrolling-menu--scroll-container) {
+    padding: var(--carousel-gap);
+  }
+
+  :global(.react-horizontal-scrolling-menu--scroll-container) {
+    gap: var(--carousel-gap);
+  }
+
+  :global(.react-horizontal-scrolling-menu--item) {
+    margin-inline: auto;
+  }
+
+  // overscroll-behavior-inline: contain;
+  // scroll-snap-type: x mandatory;
+  // -webkit-overflow-scrolling: touch;
+  // padding-bottom: 0.5rem;
+  // scrollbar-width: none;
+  // -ms-overflow-style: none;
+  // touch-action: pan-x pinch-zoom;
+  // cursor: grab;
+
+  // &::-webkit-scrollbar {
+  //   display: none;
+  // }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--blog-content-bg);
+  border-radius: 1rem;
+  // box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  min-height: 100%;
+  max-width: 16rem;
+  min-width: 12rem;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-0.5rem);
+  }
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 3/3;
+  object-fit: cover;
+  box-shadow: var(--blog-image-shadow);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.cardContent {
+  padding: 1rem 1rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.cardExcerpt {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.cardButton {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+/* Tablet */
+@include aboveTablet {
+  .blog {
+    padding-block: 5rem 4rem;
+  }
+
+  .carousel {
+    --carousel-gap: 1.25rem;
+  }
+
+  .cardContent {
+    padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .card {
+    flex-basis: 45%;
+  }
+}
+
+/* Desktop */
+@include aboveDesktop {
+  .blog {
+    padding-block: 8rem 7rem;
+  }
+
+  .carousel {
+    --carousel-gap: 1.5rem;
+  }
+
+  .card {
+    flex-basis: 30%;
+  }
+}

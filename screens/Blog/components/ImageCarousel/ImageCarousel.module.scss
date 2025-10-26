@@ -1,0 +1,321 @@
+.carouselContainer {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--blog-image-shadow);
+  background: var(--opacity-black-10);
+}
+
+.carouselTrack {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carouselSlide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+  }
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0.9;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+  }
+
+  &:hover {
+    background: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px var(--opacity-black-10);
+    opacity: 1;
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.carouselButtonPrev {
+  left: 1rem;
+}
+
+.carouselButtonNext {
+  right: 1rem;
+}
+
+.carouselDots {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carouselDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    background: var(--opacity-white-20);
+    transform: scale(1.2);
+  }
+}
+
+.carouselDotActive {
+  background: var(--color-white);
+  transform: scale(1.2);
+}
+
+.carouselCounter {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--blog-metadata-text);
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+/* Fullscreen Modal */
+.fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--opacity-black-30);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.fullscreenContent {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.fullscreenImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px var(--opacity-black-30);
+}
+
+.fullscreenClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 12px var(--opacity-black-10);
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    background: var(--opacity-primary-10);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.fullscreenButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-white);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10000;
+  opacity: 0.9;
+  box-shadow: 0 4px 12px var(--opacity-black-10);
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: var(--color-primary);
+  }
+
+  &:hover {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+    box-shadow: 0 6px 20px var(--opacity-black-30);
+  }
+
+  &:active {
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+.fullscreenButtonPrev {
+  left: 2rem;
+}
+
+.fullscreenButtonNext {
+  right: 2rem;
+}
+
+.fullscreenCounter {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 24px;
+  color: var(--color-primary);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  box-shadow: 0 4px 12px var(--opacity-black-10);
+  z-index: 10000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .carousel {
+    height: 28rem;
+  }
+
+  .carouselButton {
+    width: 56px;
+    height: 56px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .carouselButtonPrev {
+    left: 1.5rem;
+  }
+
+  .carouselButtonNext {
+    right: 1.5rem;
+  }
+
+  .carouselDot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .fullscreenButtonPrev {
+    left: 3rem;
+  }
+
+  .fullscreenButtonNext {
+    right: 3rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .carousel {
+    height: 30rem;
+  }
+}

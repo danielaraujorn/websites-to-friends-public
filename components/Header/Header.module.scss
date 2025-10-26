@@ -1,0 +1,158 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--header-bg);
+  border-bottom: none;
+  z-index: 1000;
+  padding: 0.625rem 0;
+  transition: all 0.3s ease;
+
+  &.scrolled {
+    background: var(--header-bg-scrolled);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta {
+  padding-block: 0.5rem;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo {
+  display: grid;
+  grid-template-areas: "image";
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logoImage {
+  height: 2rem;
+  width: auto;
+  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 0;
+  grid-area: image;
+}
+
+.colorLogo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--header-link-text);
+  font-size: var(--font-base);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  position: relative;
+  color: var(--header-link-color);
+  outline: 2px solid transparent;
+
+  &:hover {
+    color: var(--header-link-color);
+    background: var(--header-link-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--header-link-color);
+  }
+}
+
+/* Tablet */
+@include aboveTablet {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    padding: 0 2rem;
+    justify-content: space-between;
+  }
+
+  .logoImage {
+    padding-left: 0.5rem;
+    height: 2.2rem;
+  }
+
+  .cta {
+    margin-right: 0.5rem;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .navList {
+    gap: 1.5rem;
+  }
+
+  .navLink {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Desktop */
+@include aboveDesktop {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    padding: 0 3rem;
+  }
+
+  .logoImage {
+    padding-left: 0rem;
+    height: 2.6rem;
+  }
+
+  .navList {
+    gap: 2rem;
+  }
+
+  .navLink {
+    padding: 0.5rem 1rem;
+  }
+}

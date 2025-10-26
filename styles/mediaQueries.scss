@@ -1,0 +1,15 @@
+$mobile-size: 375px;
+$tablet-size: 768px;
+$desktop-size: 1600px;
+
+@mixin aboveTablet {
+  @media (min-width: $tablet-size) {
+    @content;
+  }
+}
+
+@mixin aboveDesktop {
+  @media (min-width: $desktop-size) {
+    @content;
+  }
+}
