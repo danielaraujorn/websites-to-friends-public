@@ -10,9 +10,9 @@ import { generateHomepageMetadata } from "@/utils/generateHomePageMetadata";
 export async function generateStaticParams({
   params,
 }: {
-  params: { lang?: string };
+  params: any;
 }) {
-  const { lang } = params;
+  const { lang } = params ?? {};
   const homePages = await getHomePages({
     select: ["fields.slug"],
     locale: lang,

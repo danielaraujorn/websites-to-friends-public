@@ -6,9 +6,9 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams({
   params,
 }: {
-  params: { lang?: string };
+  params: any;
 }) {
-  const { lang } = params;
+  const { lang } = params ?? {};
   const posts = await getPosts({
     select: ["fields.slug"],
     locale: lang,
